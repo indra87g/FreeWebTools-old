@@ -1,6 +1,22 @@
 
 /* General **/
 
+@media screen and (max-width:680px){
+
+	body{
+		width: auto;
+		float: none;
+	}
+	#header{
+		width: auto;
+		float: none;
+	}
+}
+
+img { 
+    max-width: 100%; height: auto; 
+}
+
 ul,ol,li{
   list-style: none;
 }
@@ -12,7 +28,7 @@ span {
 
 h1,h2,h3,h4,h5,h6{
     color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 
 p{
