@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Formatter</title>
+    <link rel="stylesheet" href="css/secondary.css">
+
+    <link rel="stylesheet" href="plugin/bootstrap/css/bootstrap.css">
+    <script src="plugin/bootstrap/js/bootstrap.js"></script>
+</head>
+<body>
+    <h1>JavaScript Formatter</h1>
+    <div class="container">
+        <label for="jsInput">Input :</label>
+        <textarea id="jsInput" rows="10"></textarea>
+        <button id="beautifyButton">Generate</button>
+        <label for="jsOutput">Output :</label>
+        <textarea id="jsOutput" rows="10" readonly></textarea>
+    </div>
+    <script>
+        // Fungsi pemformat JavaScript
+function beautifyJavaScript(js) {
+    try {
+        return esprima
+            .parse(js, { tolerant: true, range: true, loc: true, tokens: true })
+            .body
+            .map((stmt) => escodegen.generate(stmt, { format: { indent: { style: '  ' } } }))
+            .join('\n');
+    } catch (error) {
+        alert("Terjadi kesalahan saat mengurai kode")
+    }
+}
+
+// Ambil elemen HTML
+const jsInput = document.getElementById('jsInput');
+const jsOutput = document.getElementById('jsOutput');
+const beautifyButton = document.getElementById('beautifyButton');
+
+// Tambahkan event listener untuk tombol pemformat
+beautifyButton.addEventListener('click', () => {
+    const jsToBeautify = jsInput.value;
+    const beautifiedJS = beautifyJavaScript(jsToBeautify);
+    jsOutput.value = beautifiedJS;
+});
+
+    </script>
+</body>
+</html>

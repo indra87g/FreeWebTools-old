@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prakiraan Cuaca</title>
+    <link rel="stylesheet" type="text/css" href="css/secondary.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="plugin/bootstrap/css/bootstrap.css">
+    <script src="plugin/bootstrap/js/bootstrap.js"></script>
+</head>
+<body>
+    <h1>Prakiraan Cuaca</h1>
+    <div class="location-input">
+        <input type="text" id="custom-location" placeholder="Masukkan lokasi...">
+        <button onclick="getWeather()">Lihat Prakiraan Cuaca</button>
+    </div>
+    <div class="weather-widget">
+        <div class="location">Hasil Cuaca</div>
+        <div class="temperature"></div>
+        <div class="description"></div>
+    </div>
+    <script>
+        function getWeather() {
+    const apiKey = '5a5459a916d10228d76ceef228ad2d3c'; // Ganti dengan kunci API OpenWeather Anda
+    const customLocation = document.getElementById('custom-location').value;
+
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${customLocation}&units=metric&appid=${apiKey}`)
+        .then(response => response.json())
+        .then(data => {
+            const location = `${data.name}, ${data.sys.country}`;
+            const temperature = `${data.main.temp}°C`;
+            const description = data.weather[0].description;
+
+            document.querySelector('.location').textContent = location;
+            document.querySelector('.temperature').textContent = temperature;
+            document.querySelector('.description').textContent = description;
+        })
+        .catch(error => {
+            alert('Terjadi Kesalahan (' + error + '). Periksa koneksi internet anda lalu coba lagi.');
+        });
+}
+
+    </script>
+</body>
+</html>

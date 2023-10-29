@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SHA-256 Generator</title>
+    <link rel="stylesheet" href="css/secondary.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="plugin/bootstrap/css/bootstrap.css">
+    <script src="plugin/bootstrap/js/bootstrap.js"></script>
+</head>
+<body>
+        <h1>SHA-256 Generator</h1><br>
+    <input type="text" id="inputText" placeholder="Masukkan teks">
+    <button onclick="generateHash()">Generate</button>
+    <div id="output"></div>
+
+    <script>
+        function generateHash() {
+            const inputText = document.getElementById("inputText").value;
+
+            // Membuat objek TextEncoder untuk mengkonversi teks ke byte
+            const encoder = new TextEncoder();
+            const data = encoder.encode(inputText);
+
+            // Menghitung hash SHA-256
+            crypto.subtle.digest("SHA-256", data).then(hashBuffer => {
+                // Mengkonversi hasil hash ke bentuk heksadesimal
+                const hashArray = Array.from(new Uint8Array(hashBuffer));
+                const hashHex = hashArray.map(byte => byte.toString(16).padStart(2, '0')).join('');
+                
+                // Menampilkan hasil hash
+                document.getElementById("output").innerHTML = `Hash SHA-256 : ${hashHex}`;
+            });
+        }
+    </script>
+</body>
+</html>

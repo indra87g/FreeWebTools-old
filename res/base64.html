@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Encoder & Decoder</title>
+    <link rel="stylesheet" href="css/secondary.css">
+
+    <link rel="stylesheet" href="plugin/bootstrap/css/bootstrap.css">
+    <script src="plugin/bootstrap/js/bootstrap.js"></script>q
+</head>
+<body>
+    <h1>Text Encoder & Decoder</h1>
+    <div class="container">
+        <label for="inputText">Input Text :</label>
+        <textarea id="inputText" rows="4"></textarea>
+        <label for="outputText">Output :</label>
+        <textarea id="outputText" rows="4" readonly></textarea>
+        <button id="encodeButton">Encode</button>
+        <button id="decodeButton">Decode</button>
+    </div>
+    <script>
+        // Fungsi encoder
+function encodeText(text) {
+    return btoa(text); // Menggunakan Base64 encoding
+}
+
+// Fungsi decoder
+function decodeText(encodedText) {
+    return atob(encodedText); // Menggunakan Base64 decoding
+}
+
+// Ambil elemen HTML
+const inputText = document.getElementById("inputText");
+const outputText = document.getElementById("outputText");
+const encodeButton = document.getElementById("encodeButton");
+const decodeButton = document.getElementById("decodeButton");
+
+// Tambahkan event listener untuk tombol encode
+encodeButton.addEventListener("click", () => {
+    const textToEncode = inputText.value;
+    const encodedText = encodeText(textToEncode);
+    outputText.value = encodedText;
+});
+
+// Tambahkan event listener untuk tombol decode
+decodeButton.addEventListener("click", () => {
+    const encodedText = inputText.value;
+    const decodedText = decodeText(encodedText);
+    outputText.value = decodedText;
+});
+
+    </script>
+</body>
+</html>

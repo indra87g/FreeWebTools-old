@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Formatter</title>
+    <link rel="stylesheet" href="css/secondary.css">
+
+    <link rel="stylesheet" href="plugin/bootstrap/css/bootstrap.css">
+    <script src="plugin/bootstrap/js/bootstrap.js"></script>
+</head>
+<body>
+    <h1>CSS Formatter</h1>
+    <div class="container">
+        <label for="cssInput">Input :</label>
+        <textarea id="cssInput" rows="10"></textarea>
+        <button id="beautifyButton">Generate</button>
+        <label for="cssOutput">Output :</label>
+        <textarea id="cssOutput" rows="10" readonly></textarea>
+    </div>
+    <script>
+        // Fungsi pemformat CSS
+function beautifyCSS(css) {
+    return css.replace(/\s*{\s*/g, " {\n  ")
+              .replace(/\s*}\s*/g, "\n}\n")
+              .replace(/;\s*/g, ";\n  ")
+              .replace(/}\n/g, "}\n\n")
+              .replace(/}/g, "}\n");
+}
+
+// Ambil elemen HTML
+const cssInput = document.getElementById("cssInput");
+const cssOutput = document.getElementById("cssOutput");
+const beautifyButton = document.getElementById("beautifyButton");
+
+// Tambahkan event listener untuk tombol pemformat
+beautifyButton.addEventListener("click", () => {
+    const cssToBeautify = cssInput.value;
+    const beautifiedCSS = beautifyCSS(cssToBeautify);
+    cssOutput.value = beautifiedCSS;
+});
+
+    </script>
+</body>
+</html>

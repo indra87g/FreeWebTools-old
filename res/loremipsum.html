@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lorem Ipsum Generator</title>
+    <link rel="stylesheet" href="css/secondary.css">
+
+    <link rel="stylesheet" href="plugin/bootstrap/css/bootstrap.css">
+    <script src="plugin/bootstrap/js/bootstrap.js"></script>
+</head>
+<body>
+    <h1>Lorem Ipsum Generator</h1>
+    <div class="container">
+        <label for="paragraphCount">Paragraph :</label>
+        <input type="number" id="paragraphCount" value="1">
+        <button id="generateButton">Generate</button>
+        <div id="loremIpsum"></div>
+    </div>
+    <script>
+        // Fungsi untuk menghasilkan teks Lorem Ipsum
+function generateLoremIpsum(paragraphs) {
+    const loremIpsumText = "Lorem ipsum dolor sit amet, consectetur adipiscing subscribe. Nulla tincidunt, arcu at vehicula dapibus, est ligula sollicitudin sapien, nec suscipit metus urna nec ligula. Sed sit amet justo vitae ex egestas ultrices a eu turpis. In ac tristique libero. Vestibulum laoreet, nisl nec venenatis tristique, sapien nisi aliquam sapien, non posuere ligula urna vel lorem.";
+    const loremIpsumParagraphs = loremIpsumText.split('. ');
+
+    let output = '';
+    for (let i = 0; i < paragraphs; i++) {
+        output += '<p>' + loremIpsumParagraphs.join('. ') + '.</p>';
+    }
+
+    return output;
+}
+
+// Ambil elemen HTML
+const paragraphCountInput = document.getElementById('paragraphCount');
+const generateButton = document.getElementById('generateButton');
+const loremIpsum = document.getElementById('loremIpsum');
+
+// Tambahkan event listener untuk tombol buat Lorem Ipsum
+generateButton.addEventListener('click', () => {
+    const paragraphs = parseInt(paragraphCountInput.value);
+    const loremIpsumText = generateLoremIpsum(paragraphs);
+    loremIpsum.innerHTML = loremIpsumText;
+});
+
+    </script>
+</body>
+</html>

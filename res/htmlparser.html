@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML Formatter</title>
+    <link rel="stylesheet" href="css/secondary.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="plugin/bootstrap/css/bootstrap.css">
+    <script src="plugin/bootstrap/js/bootstrap.js"></script>
+</head>
+<body>
+    <h1>HTML Formatter</h1>
+    <textarea id="input" rows="10" cols="50" placeholder="Input"></textarea>
+    <br>
+    <button onclick="formatHTML()">Format Kode</button>
+    <br>
+    <textarea id="output" rows="10" cols="50" placeholder="Output"></textarea>
+
+    <script>
+        function formatHTML() {
+            const input = document.getElementById("input").value;
+            const output = document.getElementById("output");
+            
+            try {
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(input, "text/html");
+                const formattedHTML = new XMLSerializer().serializeToString(xmlDoc);
+                output.value = formattedHTML;
+            } catch (error) {
+                alert("Terjadi kesalahan saat mengurai kode")
+            }
+        }
+    </script>
+</body>
+</html>
