@@ -2,9 +2,10 @@
 <!DOCTYPE html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="res/img/favicon.png" rel="icon">
-     <link href="res/img/apple-touch-icon.png" rel="apple-touch-icon">
     <title>FreeWebTools</title>
+     <link href="res/img/favicon.png" rel="icon">
+     <link href="res/img/apple-touch-icon.png" rel="apple-touch-icon">
+
 </head>
 <body>
     <nav class="navbar">
@@ -12,14 +13,14 @@
         <ul>
             <li><a href="#">Beranda</a></li>
             <li><a href="#">Donasi</a></li>
-            <li><a href="#">API</a></li>
-            <li><a href="index_en.html">English Version</a></li>
+            <li><a href="#category">Jelajahi</a></li>
+            <li><a href="#">User Area</a></li>
         </ul>
     </nav>
     <div class="hero">
         <h1>Selamat Datang di FreeWebTools</h1>
-        <p>Temukan berbagai jenis alat yang akan membantu anda.</p>
-        <a href="#learn-more" class="wa">Sarankan Fitur ( via WA )</a>
+        <p>Temukan berbagai jenis alat berguna yang akan membantu anda.</p>
+        <a href="#learn-more" class="wa">Menjadi Kontributor</a>
         <a href="#learn-more" class="dc">Komunitas Discord</a>
     </div><br>
     <div id="why" align="center">
@@ -35,8 +36,34 @@
         <p>Memiliki 50+ Alat yang terbagi menjadi 4 kategori.</p>
     </div><hr><br>
     </div>
+    <h3 align="center">Hai, Selamat Datang Kembali di <span>FreeWebTools !</span></h3><br>
+    <b>Waktu Sekarang</b>
+    <div class="clocki">
+        <div class="box">
+            <p id="tahun"></p>
+        </div>
+        <div class="box">
+            <p id="bulan"></p>
+        </div>
+        <div class="box">
+            <p id="tanggal"></p>
+        </div><br>
+    </div>
+    <div class="clock">
+        <div class="box">
+            <p id="jam"></p>
+        </div>
+        <div class="box">
+            <p id="menit"></p>
+        </div>
+        <div class="box">
+            <p id="detik"></p>
+        </div>
+    </div>
+    <hr>
+    <div id="category">
         <h3 align="center">Kategori</h3>
-        <p align="center">Temukan berbagai alat yang disusun berdasarkan beberapa kategori</p>
+        <p align="center">Temukan berbagai alat yang disusun berdasarkan beberapa kategori. Untuk saat ini, tidak semua alat <br>dapat digunakan dengan benar</p></div>
     <div id="developer">
         <h5>Developer</h5>
         <ul>
@@ -49,20 +76,20 @@
         </ul>
     </div>
     <div id="social">
-        <h5>Sosial</h5>
+        <h5>Cari</h5>
        <ul>
-            <a href="res/group.html"><li>Cari Grup WA/Telegram</li></a>
-            <a href="res/contact.html"><li>Cari Kontak</li></a>
-            <a href=""><li></li></a>
-
+            <a href="res/group.html"><li>Grup WA/Telegram</li></a>
+            <a href="res/contact.html"><li>Kontak</li></a>
+            <a href=""><li>Pinterest</li></a>
         </ul>
     </div>
     <div id="productivity">
         <h5>Produktifitas</h5>
         <ul>
             <a href="res/cgpt.html"><li>ChatGPT</li></a>
-            <a href=""><li>Berita</li></a>
+            <a href="res/news.html"><li>Berita</li></a>
             <a href="res/weather.html"><li>Cuaca</li></a>
+            <a href=""><li>DALL - E</li>
         </ul>
     </div>
     <div id="fun">
@@ -70,12 +97,16 @@
         <ul>
             <a href="res/tictactoe.html"><li>Tic Tac Toe</li></a>
             <a href=""><li>Wheel of Fortune</li></a>
-            <a href=""><li>FYI</li></a>
+            <a href=""><li>TV Online</li></a>
+            <a href=""><li>Kuis</li></a>
+            <a href=""><li>Ujian Sekolah Simulator</li>
+            <a href=""><li>Quotes</li></a>
         </ul>
     </div><hr>
     <div id="contributor" align="center">
         <h3>Kontributor</h3>
         <p>Tanpa bantuan mereka, proyek ini tidak akan berjalan</p>
+        <b>Indra Sah Noeldy (@indra87g) - Pembuat</b>
     </div>
 </body>
 <br>
@@ -90,9 +121,15 @@
     <li><a href="" target="_blank">Donasi</a></li>
      <h4>Rekomendasi</h4>
      <li><a href="https://ai.prinsh.com" target="_blank">PrinsAI</a></li>
+     <li><a href="https://chat.openai.com" target="_blank">ChatGPT</a></li>
 </div>
-<h3>Iklan</h3>
+<h4>Iklan</h4>
 <a href="https://minecraftpocket-servers.com/server/124494/"><img src="https://minecraftpocket-servers.com/server/124494/banners/banner-5.png" border="0"></a>
+<b>Statistik</b>
+<p>Pengunjung : - </p>
+<p>Total alat : - </p>
+<p>User : - </p>
+
 <hr>
 <div>
 <p>&copy; Copyright <i>2023</i> <b>GammaTech Informatika</b></p>
@@ -102,9 +139,7 @@
 <!--Stylesheet-->
 <link rel="stylesheet" href="res/css/main.css">
 <link rel="stylesheet" href="res/plugin/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="res/plugin/aos/aos.css">
 
 <!--Javascript-->
 <script src="res/js/main.js"></script>
 <script src="res/plugin/bootstrap/js/bootstrap.min.js"></script>
-<script src="res/plugin/aos/aos.js"></script>
